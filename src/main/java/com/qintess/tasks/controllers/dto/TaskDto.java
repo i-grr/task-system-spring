@@ -13,15 +13,15 @@ public class TaskDto {
 	private Integer id;
 	
 	@NotNull
-	@NotBlank
+	@NotBlank(message = "The name field cannot be empty.")
 	private String name;
 	
 	@NotNull
-	@NotBlank
+	@NotBlank(message = "The description field cannot be empty.")
 	private String description;
 	
 	@NotNull
-	@NotBlank
+	@NotBlank(message = "The scheduling date field cannot be empty.")
 	private String schedulingDate;
 	
 	@NotNull
@@ -34,8 +34,8 @@ public class TaskDto {
 		this.id = task.getId();
 		this.name = task.getName();
 		this.description = task.getDescription();
-		this.schedulingDate = task.getSchedulingDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		this.creationDate = task.getCreationDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		this.schedulingDate = task.getSchedulingDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		this.creationDate = task.getCreationDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 
 	public Integer getId() {

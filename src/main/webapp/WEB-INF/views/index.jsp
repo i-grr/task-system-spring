@@ -21,27 +21,30 @@
 			<h1>Tasks to perform</h1>
 		</div>
 		
-		<table class="table">
+		<!-- Verificando se a lista não é nula -->
+		<c:if test="${not empty tasks}">
+			<table class="table">
 		
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Scheduling Date</th>
-				<th>Creation Date</th>
-			</tr>
-			
-			<c:forEach var="task" items="${tasks}">
-				
 				<tr>
-					<td>${task.id}</td>
-					<td>${task.name}</td>	
-					<td>${task.schedulingDate}</td>
-					<td>${task.creationDate}</td>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Scheduling Date</th>
+					<th>Creation Date</th>
 				</tr>
+			
+				<c:forEach var="task" items="${tasks}">
+					
+					<tr>
+						<td>${task.id}</td>
+						<td>${task.name}</td>	
+						<td>${task.schedulingDate}</td>
+						<td>${task.creationDate}</td>
+					</tr>
+			
+				</c:forEach>
 		
-			</c:forEach>
-		
-		</table>
+			</table>
+		</c:if>
 		
 	</div>
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,33 @@
 	<jsp:include page="./common/header.jsp"></jsp:include>
 		
 	<div class="container my-4">		
-		<h1>Site under construction!</h1>
+		
+		<div class="jumbotron">
+			<h1>Tasks to perform</h1>
+		</div>
+		
+		<table class="table">
+		
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Scheduling Date</th>
+				<th>Creation Date</th>
+			</tr>
+			
+			<c:forEach var="task" items="${tasks}">
+				
+				<tr>
+					<td>${task.id}</td>
+					<td>${task.name}</td>	
+					<td>${task.schedulingDate}</td>
+					<td>${task.creationDate}</td>
+				</tr>
+		
+			</c:forEach>
+		
+		</table>
+		
 	</div>
 	
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>

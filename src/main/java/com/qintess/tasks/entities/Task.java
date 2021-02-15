@@ -24,12 +24,12 @@ public class Task {
 	
 	public Task() {}
 
-	public Task(Integer id, String name, String description, LocalDate schedulingDate, LocalDate creationDate) {
+	public Task(Integer id, String name, String description, LocalDate schedulingDate) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.schedulingDate = schedulingDate;
-		this.creationDate = creationDate;
+		this.creationDate = LocalDate.now();
 	}
 
 	public Integer getId() {
